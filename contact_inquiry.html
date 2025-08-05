@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Tours Japan | Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">桜ツアー (Sakura Tours)</div>
+        <nav class="nav-links">
+            <a href="content.html">Destinations</a>
+            <a href="price_Block.html">Packages</a>
+            <a href="download.html">Mobile App</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="contact_inquiry.html" style="color: var(--sakura-dark-pink);">Contact Us</a>
+            <button class="login-btn" onclick="window.location.href='header_login.html'">Log In</button>
+        </div>
+    </header>
+    
+    <section class="contact-section">
+        <div class="contact-info">
+            <h2>Get in touch</h2>
+            <p><strong>Sakura Tours Japan</strong><br>
+            hello@sakuratours.jp<br>
+            +81 3 1234 5678</p>
+            
+            <p><strong>Tokyo Office</strong><br>
+            Sakura Building, 5-10-20 Shibuya<br>
+            Shibuya-ku, Tokyo 150-0002, Japan</p>
+            
+            <div class="business-hours">
+                <h3>Business Hours</h3>
+                <p>Monday-Friday: 9:00-18:00<br>
+                Saturday: 10:00-15:00<br>
+                Sunday: Closed</p>
+            </div>
+            
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">TW</a>
+                    <a href="#" class="social-icon">YT</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h2>Plan Your Sakura Adventure</h2>
+            <p style="margin-bottom: 1.5rem;">Fill out this form to start planning your perfect cherry blossom tour. Our sakura specialists will contact you within 24 hours.</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" placeholder="Tanaka Hanako" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number (optional)</label>
+                    <input type="tel" id="phone" placeholder="+81 90 1234 5678">
+                </div>
+                <div class="form-group">
+                    <label for="tour">Tour Package</label>
+                    <select id="tour" required>
+                        <option value="">Select a tour package</option>
+                        <option value="sakura-essentials">Sakura Essentials (¥45,000)</option>
+                        <option value="sakura-explorer">Sakura Explorer (¥120,000)</option>
+                        <option value="luxury-sakura">Luxury Sakura (¥380,000)</option>
+                        <option value="custom">Custom Tour</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="travel-date">Preferred Travel Dates</label>
+                    <input type="date" id="travel-date" min="2024-03-15" max="2024-05-15" required>
+                </div>
+                <div class="form-group">
+                    <label for="group-size">Number of Travelers</label>
+                    <select id="group-size" required>
+                        <option value="">Select group size</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3-5">3-5 people</option>
+                        <option value="6-10">6-10 people</option>
+                        <option value="10+">More than 10 people</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests</label>
+                    <textarea id="message" placeholder="Tell us about any special requirements, preferred destinations, or questions about our cherry blossom tours..."></textarea>
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <input type="checkbox" id="newsletter" style="width: auto; margin-right: 10px;">
+                    <label for="newsletter" style="margin: 0;">Subscribe to our sakura forecast newsletter</label>
+                </div>
+                <button type="submit" class="send-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved. | プライバシーポリシー | 利用規約</p>
+    </footer>
+</body>
+</html>

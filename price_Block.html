@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Tours Japan | Packages</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        /* Pricing Block Specific Styles */
+        .pricing-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+        
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card.featured {
+            background-color: #f0f5ff;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--japan-black);
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: var(--japan-red);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .pricing-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sakura-dark-pink);
+        }
+        
+        .pricing-card.featured li:before {
+            color: var(--sakura-dark-pink);
+            font-weight: bold;
+        }
+        
+        .pricing-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .select-plan-btn {
+            background-color: var(--sakura-dark-pink);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .select-plan-btn:hover {
+            background-color: var(--japan-red);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">桜ツアー (Sakura Tours)</div>
+        <nav class="nav-links">
+            <a href="content.html">Destinations</a>
+            <a href="price_Block.html" style="color: var(--sakura-dark-pink);">Packages</a>
+            <a href="download.html">Mobile App</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="contact_inquiry.html">Contact Us</a>
+            <button class="login-btn" onclick="window.location.href='header_login.html'">Log In</button>
+        </div>
+    </header>
+    
+    <section class="pricing-section">
+        <h2>Choose Your Perfect Sakura Experience</h2>
+        <p>Select from our carefully crafted tour packages to experience Japan's cherry blossom season in the way that suits you best</p>
+        
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>SAKURA ESSENTIALS</h3>
+                <ul>
+                    <li>3-day guided tour</li>
+                    <li>Top sakura spots in one city</li>
+                    <li>English-speaking guide</li>
+                    <li>Cherry blossom forecast updates</li>
+                    <li>Welcome drink at a hanami spot</li>
+                </ul>
+                <div class="price">¥ 45,000</div>
+                <p>Perfect for first-time visitors or those with limited time. Experience the essential cherry blossom viewing spots with expert guidance and cultural insights.</p>
+                <button class="select-plan-btn">Select this plan</button>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>SAKURA EXPLORER</h3>
+                <ul>
+                    <li>7-day comprehensive tour</li>
+                    <li>Multiple cities and hidden spots</li>
+                    <li>Private transportation</li>
+                    <li>Traditional kaiseki dinner</li>
+                    <li>Night viewing with illuminations</li>
+                    <li>Professional photo session</li>
+                </ul>
+                <div class="price">¥ 120,000</div>
+                <p>Our most popular package! Immerse yourself in Japan's sakura season with a perfect balance of famous sites and off-the-beaten-path locations across multiple regions.</p>
+                <button class="select-plan-btn">Select this plan</button>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>LUXURY SAKURA</h3>
+                <ul>
+                    <li>10-day premium experience</li>
+                    <li>Luxury accommodations</li>
+                    <li>Private guide and vehicle</li>
+                    <li>Exclusive viewing locations</li>
+                    <li>Michelin-star dining experiences</li>
+                    <li>Hot spring ryokan stay</li>
+                    <li>Helicopter tour over sakura sites</li>
+                </ul>
+                <div class="price">¥ 380,000</div>
+                <p>The ultimate cherry blossom experience with no compromises. Enjoy Japan's sakura season in absolute comfort with exclusive access to special viewing locations and premium cultural experiences.</p>
+                <button class="select-plan-btn">Select this plan</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved. | プライバシーポリシー | 利用規約</p>
+    </footer>
+</body>
+</html>

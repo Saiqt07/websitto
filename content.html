@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Tours Japan | Destinations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        /* Content Block Specific Styles */
+        .content-block {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .content-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .content-block h2 {
+            font-size: 2rem;
+            color: var(--japan-red);
+            margin-bottom: 1rem;
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .content-block p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .content-headers {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .content-header-item {
+            margin-bottom: 2rem;
+        }
+        
+        .content-header-item h3 {
+            color: var(--japan-red);
+            margin-bottom: 0.5rem;
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .content-header-item p {
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .content-block {
+                flex-direction: column;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">桜ツアー (Sakura Tours)</div>
+        <nav class="nav-links">
+            <a href="content.html" style="color: var(--sakura-dark-pink);">Destinations</a>
+            <a href="price_Block.html">Packages</a>
+            <a href="download.html">Mobile App</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="contact_inquiry.html">Contact Us</a>
+            <button class="login-btn" onclick="window.location.href='header_login.html'">Log In</button>
+        </div>
+    </header>
+    
+    <div class="content-block">
+        <div class="content-text">
+            <h2>Discover Japan's Cherry Blossom Magic</h2>
+            <p>Japan's cherry blossom season (sakura) is a breathtaking natural phenomenon that attracts visitors from around the world. For a few magical weeks each spring, the country transforms as thousands of cherry trees burst into delicate pink and white blooms.</p>
+            <p>Our carefully curated tours take you to the most spectacular viewing spots across Japan, from iconic urban parks to hidden rural gems, ensuring you experience this fleeting beauty at its peak.</p>
+        </div>
+        <div class="content-image">
+            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Cherry blossoms in full bloom">
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="content-headers">
+            <div class="content-header-item">
+                <h3>Tokyo's Urban Sakura</h3>
+                <p>Experience the contrast of delicate pink blossoms against Tokyo's modern skyline. Our Tokyo tour includes visits to Ueno Park, home to over 1,000 cherry trees, the picturesque Chidorigafuchi moat alongside the Imperial Palace, and the romantic nighttime illuminations at Rikugien Garden.</p>
+            </div>
+            
+            <div class="content-header-item">
+                <h3>Kyoto's Traditional Beauty</h3>
+                <p>Discover cherry blossoms in Japan's cultural heart, where ancient temples and traditional gardens create the perfect backdrop. Highlights include the Philosopher's Path, a canal lined with hundreds of cherry trees, the majestic Heian Shrine gardens, and the historic Maruyama Park, home to a famous weeping cherry tree that's illuminated at night.</p>
+            </div>
+            
+            <div class="content-header-item">
+                <h3>Mount Fuji Sakura Views</h3>
+                <p>Witness the breathtaking sight of cherry blossoms framing Japan's iconic Mount Fuji. Our tour takes you to the best viewing spots around Lake Kawaguchiko, the picturesque Chureito Pagoda, and the stunning Fuji Five Lakes region where pink sakura contrast beautifully with the snow-capped mountain.</p>
+            </div>
+            
+            <div class="content-header-item">
+                <h3>Hokkaido's Late Bloom</h3>
+                <p>For travelers visiting Japan in May, Hokkaido offers a second chance to experience sakura. Japan's northernmost island enjoys a later bloom, with highlights including Goryokaku Park's star-shaped fort surrounded by 1,600 cherry trees, the scenic Matsumae Park with 10,000 trees of 250 varieties, and the unique experience of seeing cherry blossoms against snow-capped mountains.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved. | プライバシーポリシー | 利用規約</p>
+    </footer>
+</body>
+</html>

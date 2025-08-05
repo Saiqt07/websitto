@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Tours Japan | Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sakura Petals Animation -->
+    <div class="sakura-petal" style="--random-x: 0.1; animation-duration: 15s; left: 5%;"></div>
+    <div class="sakura-petal" style="--random-x: 0.3; animation-duration: 20s; left: 15%;"></div>
+    <div class="sakura-petal" style="--random-x: -0.2; animation-duration: 18s; left: 25%;"></div>
+    <div class="sakura-petal" style="--random-x: 0.4; animation-duration: 12s; left: 35%;"></div>
+    <div class="sakura-petal" style="--random-x: -0.1; animation-duration: 16s; left: 45%;"></div>
+
+    <header class="header">
+        <div class="logo">桜ツアー (Sakura Tours)</div>
+        <nav class="nav-links">
+            <a href="content.html">Destinations</a>
+            <a href="price_Block.html">Packages</a>
+            <a href="download.html">Mobile App</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="contact_inquiry.html">Contact Us</a>
+            <button class="login-btn" style="background-color: var(--sakura-dark-pink); color: white;">Log In</button>
+        </div>
+    </header>
+    
+    <main class="login-container">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80" alt="Cherry Blossoms" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--sakura-pink);">
+        </div>
+        <h2>Welcome to Your Sakura Journey</h2>
+        <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">Log in to access your tour bookings, sakura forecasts, and exclusive member benefits</p>
+        <form>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <div class="form-group" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                <input type="checkbox" id="remember" style="width: auto; margin-right: 10px;">
+                <label for="remember" style="margin: 0;">Remember me</label>
+            </div>
+            <button type="submit" class="login-form-btn">Log In</button>
+        </form>
+        <div class="login-footer">
+            <p>Don't have an account? <a href="#" style="color: var(--sakura-dark-pink);">Sign up for sakura updates</a></p>
+            <p><a href="#" style="color: var(--sakura-dark-pink);">Forgot password?</a></p>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
+            <p style="color: #666; font-size: 0.9rem;">2024 Cherry Blossom Season: March 15 - May 15</p>
+            <p style="color: #666; font-size: 0.9rem;">Book early to secure your preferred dates!</p>
+        </div>
+    </main>
+</body>
+</html>

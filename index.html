@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Tours Japan | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        /* Home Page Specific Styles */
+        .featured-destinations {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .featured-destinations h2 {
+            font-size: 2.5rem;
+            color: var(--japan-red);
+            margin-bottom: 2rem;
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .destination-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .destination-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .destination-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .destination-info {
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .destination-info h3 {
+            color: var(--japan-black);
+            margin-bottom: 0.5rem;
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .destination-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .destination-link {
+            display: inline-block;
+            color: var(--sakura-dark-pink);
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        .destination-link:hover {
+            color: var(--japan-red);
+        }
+        
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: var(--japan-red);
+            margin-bottom: 2rem;
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 5rem;
+            color: var(--sakura-pink);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-family: serif;
+            opacity: 0.5;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--japan-black);
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">桜ツアー (Sakura Tours)</div>
+        <nav class="nav-links">
+            <a href="content.html">Destinations</a>
+            <a href="price_Block.html">Packages</a>
+            <a href="download.html">Mobile App</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="contact_inquiry.html">Contact Us</a>
+            <button class="login-btn" onclick="window.location.href='header_login.html'">Log In</button>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Japan's Magical Sakura Season</h1>
+            <p>Journey through Japan's most breathtaking cherry blossom spots with our exclusive tours. From Tokyo's bustling streets to Kyoto's serene temples, witness the beauty of sakura in full bloom.</p>
+            <button class="cta-btn">Book Your Sakura Adventure</button>
+        </div>
+    </section>
+    
+    <section class="featured-destinations">
+        <h2>Popular Sakura Destinations</h2>
+        <p>Discover Japan's most enchanting cherry blossom viewing spots</p>
+        
+        <div class="destination-cards">
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="destination-info">
+                    <h3>Tokyo Sakura Tour</h3>
+                    <p>Experience the magic of cherry blossoms in Japan's vibrant capital. Visit iconic spots like Ueno Park, Shinjuku Gyoen, and the Meguro River.</p>
+                    <a href="content.html" class="destination-link">Learn more →</a>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="destination-info">
+                    <h3>Kyoto Temple Blossoms</h3>
+                    <p>Discover the serene beauty of cherry blossoms against the backdrop of ancient temples and traditional gardens in Japan's cultural heart.</p>
+                    <a href="content.html" class="destination-link">Learn more →</a>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="destination-info">
+                    <h3>Hokkaido Late Bloom</h3>
+                    <p>Experience Japan's northernmost island's unique late-blooming sakura season, with stunning views against snow-capped mountains.</p>
+                    <a href="content.html" class="destination-link">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <h2>What Our Travelers Say</h2>
+        
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">The Sakura Tour exceeded all my expectations. Our guide was knowledgeable and passionate, taking us to hidden spots away from the crowds. The cherry blossoms were absolutely magical!</p>
+                <p class="testimonial-author">Emma Thompson</p>
+                <p class="testimonial-location">London, UK</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">As a photographer, I was looking for the perfect sakura shots. This tour delivered beyond my wildest dreams. The timing was perfect, and we had plenty of time at each location.</p>
+                <p class="testimonial-author">Michael Chen</p>
+                <p class="testimonial-location">Vancouver, Canada</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">The cultural experiences included in our sakura tour made it truly special. We didn't just see cherry blossoms - we learned about their significance in Japanese culture and history.</p>
+                <p class="testimonial-author">Sophie Martin</p>
+                <p class="testimonial-location">Paris, France</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved. | プライバシーポリシー | 利用規約</p>
+    </footer>
+</body>
+</html>

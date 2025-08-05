@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Tours Japan | Mobile App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        /* Download App Section Styles */
+        .app-hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+        
+        .app-hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .app-hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .app-hero h1 {
+            font-size: 2.5rem;
+            color: var(--japan-black);
+            margin-bottom: 1rem;
+            font-family: 'Sawarabi Mincho', serif;
+        }
+        
+        .app-hero p {
+            color: var(--japan-black);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .app-download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .app-download-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background-color: #000;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .app-download-btn.google-play {
+            background-color: #4285F4;
+        }
+        
+        .app-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .app-download-btn img {
+            height: 24px;
+            margin-right: 0.8rem;
+        }
+        
+        .phone-mockup {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background-color: #f0f5ff;
+            border-radius: 40px;
+            border: 10px solid #e0e0e0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .phone-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+        
+        .phone-notch {
+            width: 50%;
+            height: 25px;
+            background-color: #e0e0e0;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 1rem;
+        }
+        
+        .phone-home-button {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .app-placeholder {
+            width: 80%;
+            height: 150px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .app-hero {
+                flex-direction: column;
+                padding: 2rem 1rem;
+            }
+            
+            .app-download-buttons {
+                flex-direction: column;
+            }
+            
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">桜ツアー (Sakura Tours)</div>
+        <nav class="nav-links">
+            <a href="content.html">Destinations</a>
+            <a href="price_Block.html">Packages</a>
+            <a href="download.html" style="color: var(--sakura-dark-pink);">Mobile App</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="contact_inquiry.html">Contact Us</a>
+            <button class="login-btn" onclick="window.location.href='header_login.html'">Log In</button>
+        </div>
+    </header>
+    
+    <section class="app-hero">
+        <div class="app-hero-content">
+            <h1>Your Sakura Guide in Your Pocket</h1>
+            <p>Download our Sakura Tours mobile app to enhance your cherry blossom experience in Japan. Get real-time bloom forecasts, interactive maps of viewing spots, and exclusive in-app discounts for our tours.</p>
+            
+            <ul style="margin-bottom: 1.5rem; line-height: 1.6;">
+                <li>🌸 Live cherry blossom forecasts and bloom status updates</li>
+                <li>📍 GPS-enabled maps of the best viewing locations</li>
+                <li>📸 Photo spots recommended by professional photographers</li>
+                <li>🎫 Mobile tickets and reservations for all tours</li>
+                <li>💬 24/7 in-app support in multiple languages</li>
+            </ul>
+            
+            <div class="app-download-buttons">
+                <a href="#" class="app-download-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo">
+                    Download on the<br>App Store
+                </a>
+                <a href="#" class="app-download-btn google-play">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play logo">
+                    GET IT ON<br>Google Play
+                </a>
+            </div>
+        </div>
+        
+        <div class="app-hero-image">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-notch"></div>
+                    <div class="app-placeholder" style="background-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80'); background-size: cover; background-position: center; color: white; text-shadow: 0 0 3px rgba(0,0,0,0.7);">Sakura Map</div>
+                    <div class="app-placeholder" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'); background-size: cover; background-position: center; color: white; text-shadow: 0 0 3px rgba(0,0,0,0.7);">Tour Booking</div>
+                </div>
+                <div class="phone-home-button"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved. | プライバシーポリシー | 利用規約</p>
+    </footer>
+</body>
+</html>
