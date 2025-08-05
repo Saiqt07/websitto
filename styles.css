@@ -1,58 +1,134 @@
 /* Global Styles */
 :root {
     --sakura-pink: #f8c3cd;
+    --sakura-light-pink: #fde2e4;
     --sakura-dark-pink: #e9546b;
     --japan-red: #bc002d;
     --japan-white: #ffffff;
     --japan-black: #2d2d2d;
+    --japan-light-gray: #f5f5f5;
     --spring-green: #88cb7f;
+    --accent-blue: #6a9ec0;
+    --accent-gold: #d4af37;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--japan-white);
-    color: var(--japan-black);
+    overflow-x: hidden;
+    cursor: default;
 }
+
+/* Custom Cursor Styles */
+a, button, .destination-card, .testimonial-card, .cta-btn, .login-btn, #back-to-top {
+    cursor: pointer;
+}
+
+
+
+
 
 a {
     text-decoration: none;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Sakura Petals Animation */
+.sakura-petal {
+    position: fixed;
+    z-index: 999;
+    width: 15px;
+    height: 15px;
+    background-color: var(--sakura-pink);
+    border-radius: 150% 0 150% 0;
+    animation: falling 15s infinite linear;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@keyframes falling {
+    0% {
+        top: -10%;
+        transform: rotate(0deg) translateX(calc(var(--random-x, 0.2) * 100px));
+    }
+    25% {
+        transform: rotate(90deg) translateX(calc(var(--random-x, 0.2) * 150px));
+    }
+    50% {
+        transform: rotate(180deg) translateX(calc(var(--random-x, 0.2) * 100px));
+    }
+    75% {
+        transform: rotate(270deg) translateX(calc(var(--random-x, 0.2) * 150px));
+    }
+    100% {
+        top: 110%;
+        transform: rotate(360deg) translateX(calc(var(--random-x, 0.2) * 100px));
+    }
 }
 
 /* Header Styles */
 .header {
-    background-color: var(--japan-white);
-    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: relative;
+    padding: 1.2rem 3rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
     z-index: 100;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    padding: 0.8rem 3rem;
+    background-color: rgba(255, 255, 255, 0.98);
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--japan-red);
     font-family: 'Sawarabi Mincho', serif;
+    font-size: 1.6rem;
+    color: var(--japan-red);
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--sakura-pink);
+    border-radius: 50% 50% 0 50%;
+    margin-right: 10px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 2px rgba(233, 84, 107, 0.3);
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     color: var(--japan-black);
     font-weight: 500;
-    padding: 0.5rem 0;
     position: relative;
+    padding: 0.3rem 0;
 }
 
-.nav-links a:after {
+.nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -60,49 +136,101 @@ a {
     bottom: 0;
     left: 0;
     background-color: var(--sakura-dark-pink);
-    transition: width 0.3s;
+    transition: width 0.3s ease;
 }
 
-.nav-links a:hover:after {
+.nav-links a:hover {
+    color: var(--sakura-dark-pink);
+}
+
+.nav-links a:hover::after {
     width: 100%;
 }
 
 .auth-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
-.login-btn {
-    background-color: var(--sakura-pink);
+.auth-buttons a {
     color: var(--japan-black);
+    font-weight: 500;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.auth-buttons a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--sakura-dark-pink);
+    transition: width 0.3s ease;
+}
+
+.auth-buttons a:hover {
+    color: var(--sakura-dark-pink);
+}
+
+.auth-buttons a:hover::after {
+    width: 100%;
+}
+
+.login-btn {
+    background-color: var(--sakura-dark-pink);
+    color: white;
     border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    font-weight: bold;
+    padding: 0.6rem 1.8rem;
+    border-radius: 30px;
     cursor: pointer;
+    font-weight: 500;
     transition: all 0.3s;
-    border: 1px solid var(--sakura-dark-pink);
+    box-shadow: 0 4px 15px rgba(233, 84, 107, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
 }
 
 .login-btn:hover {
-    background-color: var(--sakura-dark-pink);
-    color: white;
+    background-color: var(--japan-red);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(188, 0, 45, 0.4);
+}
+
+.login-btn:hover::before {
+    left: 100%;
+}
+
+.login-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(188, 0, 45, 0.4);
 }
 
 /* Hero Section */
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989');
+    background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 90vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: flex-start;
     color: white;
     position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -110,47 +238,110 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
     bottom: 0;
-    background: rgba(0,0,0,0.3);
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 2;
 }
 
 .hero-content {
+    max-width: 650px;
+    margin-left: 8rem;
     position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 2rem;
+    z-index: 3;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero h1 {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
     font-family: 'Sawarabi Mincho', serif;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--sakura-dark-pink);
+    border-radius: 2px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
 }
 
 .cta-btn {
     background-color: var(--sakura-dark-pink);
     color: white;
     border: none;
-    padding: 1rem 2.5rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
     font-size: 1.1rem;
-    border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s;
-    font-weight: bold;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(233, 84, 107, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--japan-red);
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    z-index: -1;
 }
 
 .cta-btn:hover {
-    background-color: var(--japan-red);
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(233, 84, 107, 0.5);
+}
+
+.cta-btn:hover::before {
+    width: 100%;
+}
+
+.cta-btn:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(233, 84, 107, 0.5);
 }
 
 
@@ -221,21 +412,592 @@ a {
     text-decoration: underline;
 }
 
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--japan-light-gray);
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sakura-divider {
+    position: relative;
+    height: 60px;
+    margin-bottom: 2rem;
+}
+
+.sakura-branch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background-color: var(--sakura-dark-pink);
+}
+
+.sakura-branch::before, .sakura-branch::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--sakura-pink);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(45deg);
+}
+
+.sakura-branch::before {
+    left: 40px;
+    top: -10px;
+}
+
+.sakura-branch::after {
+    right: 40px;
+    top: -10px;
+}
+
+.testimonials h2 {
+    font-size: 2.8rem;
+    color: var(--japan-red);
+    margin-bottom: 3rem;
+    font-family: 'Sawarabi Mincho', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.testimonials h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--sakura-dark-pink);
+    border-radius: 2px;
+}
+
+.testimonial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.testimonial-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.4s;
+    text-align: left;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    font-size: 6rem;
+    color: var(--sakura-light-pink);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: serif;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-rating i {
+    color: var(--accent-gold);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    color: #555;
+    font-size: 1rem;
+}
+
+.testimonial-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--sakura-light-pink);
+}
+
+.testimonial-info {
+    flex: 1;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--japan-black);
+    margin-bottom: 0.2rem;
+}
+
+.testimonial-location {
+    font-size: 0.85rem;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.testimonial-location i {
+    color: var(--sakura-dark-pink);
+    font-size: 0.8rem;
+}
+
+.testimonial-tour {
+    display: inline-block;
+    background-color: var(--sakura-light-pink);
+    color: var(--sakura-dark-pink);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--japan-red);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: var(--sakura-dark-pink);
+    transform: translateY(-5px);
+}
+
+#back-to-top i {
+    transition: transform 0.2s;
+}
+
+#back-to-top:hover i {
+    transform: translateY(-3px);
+}
+
 /* Responsive Styles */
+@media (max-width: 1024px) {
+    .hero-content {
+        margin-left: 5rem;
+        max-width: 600px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .destination-card {
+        min-width: 280px;
+    }
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        padding: 1rem;
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .header.scrolled {
+        padding: 1rem 1.5rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
     }
     
     .nav-links {
         margin: 1rem 0;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .hero {
+        height: 80vh;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero-content {
+        margin-left: 0;
+        padding: 0 2rem;
+        max-width: 100%;
     }
     
     .hero h1 {
         font-size: 2.5rem;
     }
+    
+    .hero h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    
+    .featured-destinations,
+    .testimonials {
+        padding: 4rem 1.5rem;
+    }
+    
+    .featured-destinations h2,
+    .testimonials h2 {
+        font-size: 2.2rem;
+    }
+    
+    .destination-card {
+        min-width: 100%;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .auth-buttons {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero {
+        height: 90vh;
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .cta-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .featured-destinations h2,
+    .testimonials h2 {
+        font-size: 1.8rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .sakura-petal {
+        opacity: 0.5; /* Reduce opacity on small screens for better readability */
+    }
+}
+
+/* Featured Destinations Section */
+.featured-destinations {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.featured-destinations h2 {
+    font-size: 2.8rem;
+    color: var(--japan-red);
+    margin-bottom: 1rem;
+    font-family: 'Sawarabi Mincho', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.featured-destinations h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--sakura-dark-pink);
+    border-radius: 2px;
+}
+
+.featured-destinations > p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+}
+
+.destination-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.destination-card {
+    flex: 1;
+    min-width: 320px;
+    max-width: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: white;
+    position: relative;
+}
+
+.destination-card:hover,
+.destination-card.touch-active {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.destination-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.destination-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.destination-card:hover .destination-img::before,
+.destination-card.touch-active .destination-img::before {
+    opacity: 0.3;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.destination-card:hover .destination-img::before {
+    opacity: 0.5;
+}
+
+.destination-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--sakura-dark-pink);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.destination-badge-special {
+    background-color: var(--accent-blue);
+}
+
+.destination-badge-new {
+    background-color: var(--accent-gold);
+}
+
+.destination-info {
+    padding: 1.8rem;
+    text-align: left;
+}
+
+.destination-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.destination-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.destination-meta i {
+    color: var(--sakura-dark-pink);
+}
+
+.destination-info h3 {
+    color: var(--japan-black);
+    margin-bottom: 0.8rem;
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 1.5rem;
+}
+
+.destination-info p {
+    color: #666;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.destination-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.destination-features span {
+    background-color: var(--sakura-light-pink);
+    color: var(--japan-black);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.destination-features i {
+    color: var(--sakura-dark-pink);
+}
+
+.destination-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sakura-dark-pink);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--sakura-dark-pink);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.destination-link:hover {
+    color: var(--japan-red);
+}
+
+.destination-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    background-color: var(--japan-red);
+}
+
+.destination-link i {
+    transition: transform 0.3s ease;
+}
+
+.destination-link:hover i {
+    transform: translateX(5px);
 }
 
 /* Contact Page Specific Styles */
@@ -339,13 +1101,246 @@ a {
     background-color: var(--japan-red);
 }
 
+/* Newsletter Section */
+.newsletter {
+    background-color: var(--sakura-light-pink);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.newsletter .container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-content {
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    color: var(--japan-red);
+    margin-bottom: 1.5rem;
+    font-family: 'Sawarabi Mincho', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.newsletter h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--sakura-dark-pink);
+}
+
+.newsletter p {
+    font-size: 1.1rem;
+    color: var(--japan-black);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.btn-subscribe {
+    background-color: var(--japan-red);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-subscribe:hover {
+    background-color: var(--sakura-dark-pink);
+}
+
+/* Footer Styles */
 .footer {
     background-color: var(--japan-black);
     color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
+    padding: 4rem 2rem 2rem;
     font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-family: 'Sawarabi Mincho', serif;
+    margin-bottom: 1rem;
+    color: var(--sakura-pink);
+}
+
+.footer-tagline {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--sakura-pink);
+    transform: translateY(-3px);
+}
+
+.footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--sakura-pink);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    padding-left: 0;
+}
+
+.footer-links a:hover {
+    color: var(--sakura-pink);
+    padding-left: 5px;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 1rem;
+    color: #aaa;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-contact i {
+    color: var(--sakura-pink);
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.footer-legal a:hover {
+    color: var(--sakura-pink);
 }
 
 @media (max-width: 768px) {

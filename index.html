@@ -6,6 +6,8 @@
     <title>Sakura Tours Japan | Home</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         /* Home Page Specific Styles */
         .featured-destinations {
@@ -143,9 +145,12 @@
     </style>
 </head>
 <body>
+
+    
     <header class="header">
         <div class="logo">桜ツアー (Sakura Tours)</div>
         <nav class="nav-links">
+            <a href="index.html" style="color: var(--sakura-dark-pink);">Home</a>
             <a href="content.html">Destinations</a>
             <a href="price_Block.html">Packages</a>
             <a href="download.html">Mobile App</a>
@@ -165,65 +170,269 @@
     </section>
     
     <section class="featured-destinations">
-        <h2>Popular Sakura Destinations</h2>
-        <p>Discover Japan's most enchanting cherry blossom viewing spots</p>
+        <h2 data-aos="fade-up">Popular Sakura Destinations</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Discover Japan's most enchanting cherry blossom viewing spots</p>
         
         <div class="destination-cards">
-            <div class="destination-card">
-                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+            <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    <div class="destination-badge"><i class="fas fa-star"></i> Popular</div>
+                </div>
                 <div class="destination-info">
+                    <div class="destination-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Tokyo</span>
+                        <span><i class="fas fa-calendar-alt"></i> Mar-Apr</span>
+                    </div>
                     <h3>Tokyo Sakura Tour</h3>
                     <p>Experience the magic of cherry blossoms in Japan's vibrant capital. Visit iconic spots like Ueno Park, Shinjuku Gyoen, and the Meguro River.</p>
-                    <a href="content.html" class="destination-link">Learn more →</a>
+                    <div class="destination-features">
+                        <span><i class="fas fa-camera"></i> Photo spots</span>
+                        <span><i class="fas fa-utensils"></i> Food tour</span>
+                    </div>
+                    <a href="content.html" class="destination-link">Explore tour <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             
-            <div class="destination-card">
-                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+            <div class="destination-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    <div class="destination-badge destination-badge-special"><i class="fas fa-heart"></i> Top Rated</div>
+                </div>
                 <div class="destination-info">
+                    <div class="destination-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Kyoto</span>
+                        <span><i class="fas fa-calendar-alt"></i> Mar-Apr</span>
+                    </div>
                     <h3>Kyoto Temple Blossoms</h3>
                     <p>Discover the serene beauty of cherry blossoms against the backdrop of ancient temples and traditional gardens in Japan's cultural heart.</p>
-                    <a href="content.html" class="destination-link">Learn more →</a>
+                    <div class="destination-features">
+                        <span><i class="fas fa-torii-gate"></i> Temple access</span>
+                        <span><i class="fas fa-tshirt"></i> Kimono rental</span>
+                    </div>
+                    <a href="content.html" class="destination-link">Explore tour <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             
-            <div class="destination-card">
-                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+            <div class="destination-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="destination-img" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    <div class="destination-badge destination-badge-new"><i class="fas fa-certificate"></i> New Tour</div>
+                </div>
                 <div class="destination-info">
+                    <div class="destination-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Hokkaido</span>
+                        <span><i class="fas fa-calendar-alt"></i> Apr-May</span>
+                    </div>
                     <h3>Hokkaido Late Bloom</h3>
                     <p>Experience Japan's northernmost island's unique late-blooming sakura season, with stunning views against snow-capped mountains.</p>
-                    <a href="content.html" class="destination-link">Learn more →</a>
+                    <div class="destination-features">
+                        <span><i class="fas fa-mountain"></i> Nature hikes</span>
+                        <span><i class="fas fa-hot-tub"></i> Hot springs</span>
+                    </div>
+                    <a href="content.html" class="destination-link">Explore tour <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
     
     <section class="testimonials">
-        <h2>What Our Travelers Say</h2>
+        <div class="sakura-divider">
+            <div class="sakura-branch"></div>
+        </div>
+        
+        <h2 data-aos="fade-up">What Our Travelers Say</h2>
         
         <div class="testimonial-container">
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
                 <p class="testimonial-text">The Sakura Tour exceeded all my expectations. Our guide was knowledgeable and passionate, taking us to hidden spots away from the crowds. The cherry blossoms were absolutely magical!</p>
-                <p class="testimonial-author">Emma Thompson</p>
-                <p class="testimonial-location">London, UK</p>
+                <div class="testimonial-profile">
+                    <div class="testimonial-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                    <div class="testimonial-info">
+                        <p class="testimonial-author">Emma Thompson</p>
+                        <p class="testimonial-location"><i class="fas fa-map-marker-alt"></i> London, UK</p>
+                    </div>
+                </div>
+                <div class="testimonial-tour">Tokyo Sakura Tour</div>
             </div>
             
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
                 <p class="testimonial-text">As a photographer, I was looking for the perfect sakura shots. This tour delivered beyond my wildest dreams. The timing was perfect, and we had plenty of time at each location.</p>
-                <p class="testimonial-author">Michael Chen</p>
-                <p class="testimonial-location">Vancouver, Canada</p>
+                <div class="testimonial-profile">
+                    <div class="testimonial-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                    <div class="testimonial-info">
+                        <p class="testimonial-author">Michael Chen</p>
+                        <p class="testimonial-location"><i class="fas fa-map-marker-alt"></i> Vancouver, Canada</p>
+                    </div>
+                </div>
+                <div class="testimonial-tour">Kyoto Temple Blossoms</div>
             </div>
             
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
                 <p class="testimonial-text">The cultural experiences included in our sakura tour made it truly special. We didn't just see cherry blossoms - we learned about their significance in Japanese culture and history.</p>
-                <p class="testimonial-author">Sophie Martin</p>
-                <p class="testimonial-location">Paris, France</p>
+                <div class="testimonial-profile">
+                    <div class="testimonial-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                    <div class="testimonial-info">
+                        <p class="testimonial-author">Sophie Martin</p>
+                        <p class="testimonial-location"><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                    </div>
+                </div>
+                <div class="testimonial-tour">Complete Japan Sakura Journey</div>
             </div>
         </div>
     </section>
     
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <h2>Stay Updated with Sakura Forecasts</h2>
+                <p>Subscribe to our newsletter for the latest cherry blossom forecasts, travel tips, and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
-        <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved. | プライバシーポリシー | 利用規約</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">桜ツアー</div>
+                <p class="footer-tagline">Experience Japan's beauty through the lens of cherry blossoms</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="content.html">Destinations</a></li>
+                    <li><a href="price_Block.html">Tour Packages</a></li>
+                    <li><a href="download.html">Mobile App</a></li>
+                    <li><a href="contact_inquiry.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Sakura Forecast</a></li>
+                    <li><a href="#">Travel Guide</a></li>
+                    <li><a href="#">Japan Travel Tips</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 1-1-1 Sakura Street, Shibuya, Tokyo</li>
+                    <li><i class="fas fa-phone"></i> +81 3-1234-5678</li>
+                    <li><i class="fas fa-envelope"></i> info@sakuratours.jp</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2023 桜ツアー (Sakura Tours Japan). All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
     </footer>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Interactive elements
+        document.querySelectorAll('.destination-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.destination-link i').style.transform = 'translateX(5px)';
+                this.querySelector('.destination-img').style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.destination-link i').style.transform = 'translateX(0)';
+                this.querySelector('.destination-img').style.transform = 'scale(1)';
+            });
+        });
+        
+        // Add touch support for mobile devices
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.destination-card').forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('touch-active');
+                }, {passive: true});
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('touch-active');
+                    }, 300);
+                }, {passive: true});
+            });
+        }
+    </script>
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
